@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gainers & Losers Report</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gainers_losers_styles.css">
+</head>
+<body>
+    <div class="report-header">
+        <h1>Gainers & Losers Report</h1>
+        <div class="header-nav">
+            <a href="dashboard.htm">← Back to Dashboard</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+    <div class="report-container">
+        <div class="report-controls">
+            <div class="filter-group">
+                <label for="company-search">Search Company:</label>
+                <input type="text" id="company-search" placeholder="Type to filter companies">
+            </div>
+            <div class="filter-group">
+                <label for="company-select">Select Company:</label>
+                <select id="company-select">
+                    <option value="">All Companies</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="month-select">Select Month:</label>
+                <select id="month-select"></select>
+            </div>
+            <div class="filter-group">
+                <label>Filter by Date Range:</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="date" id="start-date" title="Start Date">
+                    <input type="date" id="end-date" title="End Date">
+                </div>
+            </div>
+            <div class="filter-group checkbox-group">
+                <label for="show-resigned-staff">Show Resigned Staff:</label>
+                <input type="checkbox" id="show-resigned-staff" checked>
+                <label for="show-direct-staff">Show Direct Staff:</label>
+                <input type="checkbox" id="show-direct-staff" checked>
+            </div>
+        </div>
+
+        <p id="no-report-data-message" class="info-message" style="display: none;">No data available for the selected filters.</p>
+
+        <div class="report-section" id="gainers-losers-report-section">
+            <h2>Top 10 Employees: Gainers & Losers</h2>
+            <div class="report-tables-container">
+                <div class="report-table gainers">
+                    <h3>Top 10 Gainers</h3>
+                    <table id="gainers-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Employee Name</th>
+                                <th>Company</th>
+                                <th>Net Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+                <div class="report-table losers">
+                    <h3>Top 10 Losers</h3>
+                    <table id="losers-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Employee Name</th>
+                                <th>Company</th>
+                                <th>Net Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section" id="all-employees-report-section">
+            <h2 class="collapsible-header">
+                All Employees with Net Growth & De-growth <span class="arrow">&#9660;</span>
+            </h2>
+            <div class="report-tables-container">
+                <div class="report-table gainers">
+                    <h3>All Employees with Net Growth</h3>
+                    <table id="all-gainers-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Employee Name</th>
+                                <th>Company</th>
+                                <th>Net Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-gainers-table-body">
+                            </tbody>
+                    </table>
+                </div>
+                <div class="report-table losers">
+                    <h3>All Employees with De-growth</h3>
+                    <table id="all-losers-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Employee Name</th>
+                                <th>Company</th>
+                                <th>Net Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-losers-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="gainers_losers_script.js"></script>
+</body>
+</html>

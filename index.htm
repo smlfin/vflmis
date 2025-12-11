@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanchinad Finance MIS</title>
+    <style>
+        /* Define Color Variables for consistency */
+        :root {
+            --teal-primary: #008080; 
+            --olive-accent: #808000; 
+            --white-bg: #ffffff;
+            --light-bg: #f7f9fb; 
+            --text-dark: #333333; 
+        }
+        
+        /* Base Body Style for Centering (Replaces .mis-landing-body) */
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: var(--text-dark); 
+            line-height: 1.5; 
+            padding: 0;
+            /* Center the container */
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: var(--light-bg);
+        }
+
+        /* Specific styles for the landing page card (Professional Look) */
+        .mis-container {
+            background-color: var(--white-bg); 
+            width: 100%; 
+            max-width: 420px; 
+            padding: 35px 50px; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Modern, subtle shadow */
+            text-align: center; 
+            border-top: 6px solid var(--teal-primary); 
+        }
+        .logo-section img { 
+            max-width: 80px; 
+            margin-bottom: 10px; 
+        }
+        .mis-container h1 { 
+            color: var(--teal-primary); 
+            margin: 0 0 5px 0; 
+            font-size: 26px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+        p.subtitle { 
+            color: var(--olive-accent); 
+            font-size: 14px; 
+            margin-bottom: 30px; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+        }
+        .options-wrapper { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+        }
+        .mis-btn { 
+            background-color: var(--teal-primary); 
+            color: var(--white-bg); 
+            padding: 18px; 
+            font-size: 18px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: all 0.3s ease; 
+            display: block;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1); 
+            border: none;
+        }
+        .mis-btn:hover { 
+            background-color: var(--olive-accent); 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer { 
+            margin-top: 30px; 
+            font-size: 12px; 
+            color: var(--text-dark); 
+        }
+    </style>
+</head>
+<body>
+    <div class="mis-container">
+        <div class="logo-section"><img src="v.png" alt="Logo" onerror="this.style.display='none'"></div>
+        <h1>Vanchinad Finance</h1>
+        <p class="subtitle">Management Information System</p>
+        <div class="options-wrapper">
+            <a href="dashboard.html" class="mis-btn">Investment</a>
+            <a href="rd-dashboard.htm" class="mis-btn">Recurring Deposit</a>
+        </div>
+        <div class="footer">&copy; 2025 Vanchinad Finance.</div>
+    </div>
+</body>
+</html>

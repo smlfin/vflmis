@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Customers/Staff Report</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fresh_old_report.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+  <nav>
+        <ul class="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="has-submenu">
+                <a href="#">Company Reports</a>
+                <ul class="submenu">
+                    <li><a href="company_inflow_outflow.html">Company-wise Inflow/Outflow Report</a></li>
+                    <li><a href="company_report_branch_performance.html">Branch Performance Report</a></li>
+                    <li><a href="branch_ranker_report.html">Branch Ranker Report</a></li>
+                    <li><a href="company_ccw.html">Company & Channel Wise (CCW) Report</a></li>
+                    <li><a href="company_target_achievement.html">Company Target vs. Achievement</a></li>
+	<li><a href="lastfin.html">Last Financial Year</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Staff Reports</a>
+                <ul class="submenu">
+                    <li><a href="staff_report.html">Individual Staff Drilldown</a></li>
+                    <li><a href="resigned_staff_report.html">Resigned Staff Analysis Report</a></li>
+                    <li><a href="employee_participation_report.html">Employee Participation Report</a></li>
+                    <li><a href="gainers_losers_report.html">Gainers & Losers</a></li>
+                    <li><a href="performer_product_study.html">Performer Product Study</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Other Reports</a>
+                <ul class="submenu">
+                    <li><a href="fresh_old_report.html">Fresh/Old Customer Report</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <a href="dashboard.htm" class="home-link">← Back to Dashboard</a>
+            
+            <h1>Fresh Customers/Staff Report</h1>
+            <p class="date-range">Report Generated for April 2025 - March 2026</p>
+        </header>
+        
+       
+
+        <section class="report-controls">
+            <div class="filter-group">
+                <label for="from-month-select">Select From Month:</label>
+                <select id="from-month-select"></select>
+            </div>
+            <div class="filter-group">
+                <label for="to-month-select">Select To Month:</label>
+                <select id="to-month-select"></select>
+            </div>
+            <div class="filter-group">
+                <label for="company-select">Select Company:</label>
+                <select id="company-select"></select>
+            </div>
+            <div class="filter-group">
+                <label for="branch-select">Select Branch:</label>
+                <select id="branch-select"></select>
+            </div>
+            <button id="view-entries-btn">View All Entries</button>
+        </section>
+
+        <main class="report-dashboard">
+            <section id="overall-contribution-section" class="report-section">
+                <h2>Overall Contribution</h2>
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>Fresh Inflow</h3>
+                        <p id="fresh-inflow">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Old Inflow</h3>
+                        <p id="old-inflow">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Fresh Net</h3>
+                        <p id="fresh-net">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Old Net</h3>
+                        <p id="old-net">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Total Fresh Customers</h3>
+                        <p id="total-fresh-customers" class="clickable-total">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Total Old Customers</h3>
+                        <p id="total-old-customers">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Total Fresh Staff Participation</h3>
+                        <p id="total-fresh-staff-participation" class="clickable-total">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="monthly-trends-section" class="report-section">
+                <h2>Monthly Trends</h2>
+                <div class="table-container">
+                    <h3>Monthly Inflow</h3>
+                    <div class="table-responsive">
+                        <table id="monthly-inflow-table" class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Fresh Inflow</th>
+                                    <th>Old Inflow</th>
+                                    <th>Total Inflow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <h3>Monthly Net Contribution</h3>
+                    <div class="table-responsive">
+                        <table id="monthly-net-table" class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Fresh Net</th>
+                                    <th>Old Net</th>
+                                    <th>Total Net</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <h3>Monthly Fresh Customer Count</h3>
+                    <div class="table-responsive">
+                        <table id="monthly-fresh-customer-count-table" class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Fresh Customer Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <h3>Monthly Fresh Staff Customer Count</h3>
+                    <div class="table-responsive">
+                        <table id="monthly-fresh-staff-customer-count-table" class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Fresh Staff Customer Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="company-contribution-section" class="report-section">
+                <h2>Company-wise Contribution</h2>
+                <div class="table-responsive">
+                    <table id="company-fresh-old-table" class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Fresh Inflow</th>
+                                <th>Fresh Net</th>
+                                <th>Old Inflow</th>
+                                <th>Old Net</th>
+                                <th>Total Inflow</th>
+                                <th>Total Net</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="detailed-entries-container" class="report-section" style="display: none;">
+                <h2>Detailed Entries</h2>
+                <div class="table-responsive">
+                    <table id="detailed-table" class="report-table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="staff-performance-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button" id="close-staff-modal">&times;</span>
+            <div id="staff-performance-drilldown-container" class="report-section-modal">
+                <h2>Fresh Staff Participation</h2>
+                <div class="table-responsive">
+                    <table id="staff-fresh-customer-table" class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Staff Name</th>
+                                <th>Company Name</th>
+                                <th>Customer Name</th>
+                                <th>Net</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fresh-customer-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button" id="close-fresh-customer-modal">&times;</span>
+            <div id="fresh-customer-drilldown-container" class="report-section-modal">
+                <h2>Fresh Customers by Staff</h2>
+                <div class="table-responsive">
+                    <table id="fresh-customer-staff-table" class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Staff Name</th>
+                                <th>Fresh Customer Count</th>
+                                <th>Total Net</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="customer-details-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button" id="close-customer-modal">&times;</span>
+            <div id="customer-details-container" class="report-section-modal">
+                <h2 id="customer-details-staff-name">Customer Details for Staff: </h2>
+                <div class="table-responsive">
+                    <table id="customer-details-table" class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>Total Inflow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="fresh_old_report.js"></script>
+</body>
+</html>

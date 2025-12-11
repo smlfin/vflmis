@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company-wise Inflow/Outflow Report</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="company_inflow_outflow.css">
+</head>
+<body>
+    <div class="report-header">
+        <h1>Company-wise Inflow/Outflow Report</h1>
+        <div class="header-nav">
+            <a href="dashboard.htm">← Back to Dashboard</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+    <div class="report-container">
+        <div class="report-controls">
+            <div class="filter-group">
+                <label for="month-select">Select Month:</label>
+                <select id="month-select"></select>
+            </div>
+            <div class="filter-group">
+                <label>Company:</label>
+                <p id="fixed-company-name" style="font-weight: bold; color: #1e3a8a;">VANCHINAD FINANCE LTD</p>
+            </div>
+            <button id="view-detailed-entries-btn">View Detailed Entries</button>
+        </div>
+
+        <div class="summary-section">
+            <h2>Overall Summary (April 2025 - Current Month)</h2>
+            <div class="summary-cards">
+                <div class="card">
+                    <h3>Total Inflow</h3>
+                    <p id="overall-total-inflow">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Outflow</h3>
+                    <p id="overall-total-outflow">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Net Growth</h3>
+                    <p id="overall-total-net-growth">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section" id="company-summary-section">
+            <h2>Company-wise Summary</h2>
+            <div class="table-responsive">
+                <table id="company-summary-table">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Total Inflow</th>
+                            <th>Total Outflow</th>
+                            <th>Total Net Growth</th>
+                            <th>% Contribution to Total Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <p id="no-company-data-message" class="info-message" style="display: none;">No company summary data available for the selected filters.</p>
+        </div>
+
+        <div class="report-section" id="monthly-breakup-section">
+            <h2>Monthly Breakup (VANCHINAD FINANCE LTD)</h2>
+            <div class="table-responsive">
+                <table id="monthly-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Inflow</th>
+                            <th>Outflow</th>
+                            <th>Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <p id="no-monthly-data-message" class="info-message" style="display: none;">No monthly data available for the fixed company/month.</p>
+        </div>
+
+        <div class="report-section" id="detailed-entries-container" style="display: none;">
+            <h2>Detailed Entries</h2>
+            <div class="table-responsive">
+                <table id="detailed-table">
+                    <thead>
+                        <tr></tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <p id="no-detailed-data-message" class="info-message" style="display: none;">No detailed entries found for the selected filters.</p>
+        </div>
+    </div>
+
+    <script src="company_inflow_outflow.js"></script>
+</body>
+</html>

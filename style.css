@@ -1,0 +1,306 @@
+/* style.css - MODERN PROFESSIONAL REPORT THEME (with Modal Fix) */
+
+:root {
+    /* Professional Blue Palette */
+    --primary-blue: #1e3a8a; /* Deep Navy Blue */
+    --accent-sky: #3b82f6; /* Sky Blue for links/accents */
+    --neutral-gray: #4b5563; /* Dark text */
+    --light-bg: #f7f9fb; /* Very light, cool background */
+    --card-bg: #ffffff; /* White card background */
+    --border-color: #e5e7eb; /* Light border */
+
+    /* Status Colors */
+    --positive-color: #059669; /* Strong, professional green */
+    --negative-color: #dc2626; /* Warning red */
+}
+
+/* -------------------- BASE STYLES -------------------- */
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--light-bg); 
+    color: var(--neutral-gray); 
+    line-height: 1.5; 
+    padding: 0;
+}
+/* *** FIX 1: Prevent background scroll when modal is open *** */
+body.modal-open {
+    overflow: hidden; 
+}
+h1, h2 { 
+    color: var(--primary-blue); 
+    font-weight: 600;
+}
+
+/* -------------------- HEADER & NAVIGATION -------------------- */
+nav { display: none !important; }
+
+.report-header {
+    background-color: var(--primary-blue); 
+    color: var(--card-bg); 
+    padding: 15px 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+.report-header h1 { 
+    color: var(--card-bg); 
+    margin: 0; 
+    font-size: 1.6em; 
+}
+.header-nav a { 
+    color: var(--card-bg); 
+    text-decoration: none; 
+    font-size: 0.9em; 
+    margin-left: 20px; 
+    padding: 6px 12px;
+    border: 1px solid var(--card-bg); 
+    border-radius: 4px; 
+    transition: background-color 0.2s;
+}
+.header-nav a:hover { 
+    background-color: var(--accent-sky); 
+    border-color: var(--accent-sky); 
+}
+
+/* -------------------- MAIN CONTAINER & FILTERS -------------------- */
+.report-container { 
+    max-width: 1300px;
+    margin: 30px auto; 
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+}
+
+.report-container h1 {
+    font-size: 2em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+.report-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--primary-blue); 
+    background-color: #eff6ff; /* Very light blue background */
+    border-radius: 8px;
+    align-items: flex-end;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+.report-controls label { 
+    color: var(--primary-blue); 
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+.report-controls input[type="text"], 
+.report-controls input[type="date"], 
+.report-controls select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+.report-controls input:focus, .report-controls select:focus {
+    border-color: var(--accent-sky);
+    outline: none;
+}
+#company-display {
+    background-color: #f3f4f6 !important;
+    font-weight: bold;
+    color: var(--primary-blue);
+    cursor: default;
+}
+
+.info-message {
+    padding: 15px;
+    background-color: #f0fdf4;
+    color: #059669;
+    border: 1px solid #d1fae5;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+/* -------------------- TABLES (MAIN REPORT) -------------------- */
+.table-responsive {
+    overflow-x: auto;
+}
+#branch-performance-table, 
+#detailed-table, 
+#employee-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9em;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.report-section th, .report-section td {
+    padding: 12px 15px;
+    text-align: left;
+}
+.report-section th { 
+    background-color: var(--primary-blue) !important; 
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    border-bottom: 2px solid var(--border-color);
+}
+.report-section td {
+    border-bottom: 1px solid #f3f4f6; 
+}
+
+/* Zebra Striping & Hover */
+.report-section tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+.report-section tbody tr:hover:not(.totals-row) { 
+    background-color: #eef4ff !important; 
+    cursor: default;
+} 
+
+/* -------------------- DRILL-DOWN FIX -------------------- */
+.report-section tbody tr td.branch-name-cell { 
+    color: var(--accent-sky) !important; 
+    font-weight: 600;
+    text-decoration: underline; 
+    cursor: pointer; 
+    transition: color 0.2s, background-color 0.2s;
+}
+.report-section tbody tr td.branch-name-cell:hover { 
+    color: var(--primary-blue) !important; 
+    background-color: #e0e9f8;
+}
+
+/* -------------------- TOTALS & GROWTH -------------------- */
+.positive { color: var(--positive-color); font-weight: 600; } 
+.negative { color: var(--negative-color); font-weight: 600; } 
+.totals-row { 
+    background-color: #e0f2f7 !important; 
+    font-weight: 700;
+    border-top: 3px solid var(--primary-blue);
+}
+.totals-row td { 
+    padding: 15px; 
+    font-size: 1em;
+}
+
+/* -------------------- DETAILED ENTRIES & MODAL -------------------- */
+.resigned-heading {
+    color: #6b7280;
+    background-color: #f3f4f6;
+    text-align: center;
+    padding: 10px;
+    margin: 15px 0 5px 0;
+    font-size: 1em;
+}
+.resigned-staff {
+    background-color: #fef2f2 !important; 
+    color: var(--negative-color) !important; 
+    font-weight: 600;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+    /* FIX: Enable internal scrolling for the modal content */
+    overflow-y: auto; 
+}
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    width: 90%;
+    max-width: 1000px;
+    /* Set a max height so the content can scroll internally */
+    max-height: 90vh; 
+    overflow-y: auto; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    animation: slideIn 0.3s forwards;
+    border-top: 5px solid var(--accent-sky);
+}
+.close-button {
+    color: #9ca3af;
+    float: right;
+    font-size: 36px;
+    font-weight: normal;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+.close-button:hover,
+.close-button:focus {
+    color: var(--negative-color);
+    cursor: pointer;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-5%); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------- RESPONSIVENESS -------------------- */
+
+@media (max-width: 768px) {
+    .report-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .report-header h1 {
+        margin-bottom: 10px;
+        font-size: 1.3em;
+    }
+    .header-nav a {
+        margin: 0 5px;
+        padding: 4px 8px;
+    }
+    .report-container {
+        margin: 15px;
+        padding: 15px;
+    }
+    .report-controls {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        align-items: stretch;
+    }
+    .filter-group {
+        min-width: unset;
+        width: 100%;
+    }
+    .report-section th, .report-section td {
+        padding: 10px 8px;
+        font-size: 0.85em;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+}

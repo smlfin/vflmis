@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanchinad Finance - Investment Dashboard</title>
+    <style>
+        /* Define Color Variables and Base Styles */
+        :root {
+            --teal-primary: #008080; 
+            --olive-accent: #808000; 
+            --white-bg: #ffffff;
+            --light-bg: #f7f9fb; 
+            --text-dark: #333333;
+        }
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--text-dark); 
+            line-height: 1.5; 
+        }
+
+        /* Header Styles */
+        .header { 
+            background-color: var(--teal-primary); 
+            color: white; 
+            padding: 20px 40px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { 
+            margin: 0; 
+            font-weight: 600; 
+            font-size: 1.5em;
+        }
+        .home-btn { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 14px; 
+            border: 1px solid white; 
+            padding: 8px 18px; 
+            border-radius: 4px; 
+            transition: all 0.3s; 
+        }
+        .home-btn:hover { 
+            background-color: white; 
+            color: var(--teal-primary); 
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        /* Dashboard Layout */
+        .dashboard-container { 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 30px; 
+        }
+
+        /* Dashboard Cards */
+        .dash-card { 
+            background: var(--white-bg); 
+            padding: 30px; 
+            border-radius: 10px; 
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            cursor: pointer; 
+            border-bottom: 6px solid var(--teal-primary); /* Accent border */
+            text-decoration: none; 
+            color: var(--text-dark); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            height: 140px; 
+        }
+        .dash-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            border-bottom-color: var(--olive-accent); /* Hover accent */
+        }
+        .dash-card h3 { 
+            margin: 10px 0 0 0; 
+            color: var(--teal-primary); 
+            font-size: 1.3em; 
+            font-weight: 700;
+        }
+        .icon { 
+            font-size: 40px; 
+            color: var(--olive-accent); 
+            margin-bottom: 5px; 
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            .dashboard-container {
+                margin: 20px;
+                gap: 20px;
+                grid-template-columns: 1fr; /* Stack cards on mobile */
+            }
+            .dash-card {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>Vanchinad Finance - Investment MIS</h2>
+        <a href="index.html" class="home-btn">Log Out</a>
+    </div>
+
+    <div class="dashboard-container">
+        <a href="company_inflow_outflow.html" class="dash-card"><div class="icon">📈</div><h3>Company Report</h3></a>
+        <a href="branch_report.html" class="dash-card"><div class="icon">📊</div><h3>Branch Report</h3></a>
+        <a href="fresh_old_report.html" class="dash-card"><div class="icon">🆕</div><h3>Fresh Customer Report</h3></a>
+        <a href="staff_report.html" class="dash-card"><div class="icon">👥</div><h3>Staff Report</h3></a>
+        <a href="https://statuesque-kleicha-dcd5fc.netlify.app/" class="dash-card"><div class="icon">✅</div><h3>Visit</h3></a>
+        <a href="gainers_losers_report.html" class="dash-card"><div class="icon">🏆</div><h3>Top Performers</h3></a>
+    </div>
+
+</body>
+</html>
