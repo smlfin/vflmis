@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Performance Report</title>
+    <link rel="stylesheet" href="staff_report_style.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="report-header">
+    <h1>Individual Staff Performance Report</h1>
+    <div class="header-nav">
+        <a href="dashboard.html" style="text-decoration: none; font-weight: bold; color: #007bff;">← Back to Dashboard</a>
+        <span style="color: #6c757d; margin: 0 5px;">|</span>
+        <a href="index.html" style="text-decoration: none; font-weight: bold; color: #dc3545;">Logout</a>
+    </div>
+</div>
+
+    <div class="report-controls">
+        <div class="filter-group">
+            <label for="company-select">Select Company:</label>
+            <select id="company-select"></select>
+        </div>
+
+        <div class="filter-group">
+            <label for="staff-select">Select Staff:</label>
+            <select id="staff-select"></select>
+        </div>
+
+        <div class="filter-group">
+            <label for="month-select">Select Month:</label>
+            <select id="month-select"></select>
+        </div>
+
+        <div class="filter-group date-range-group">
+            <label>Filter by Date Range (Optional):</label>
+            <div class="date-inputs">
+                <input type="date" id="start-date" placeholder="Start Date">
+                <input type="date" id="end-date" placeholder="End Date">
+            </div>
+        </div>
+    </div>
+
+    <main id="report-container" class="report-container">
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total Inflow (INF)</h3>
+                <p id="total-inflow">0</p>
+            </div>
+            <div class="card">
+                <h3>Total Outflow (OUT)</h3>
+                <p id="total-outflow">0</p>
+            </div>
+            <div class="card highlight">
+                <h3>Total Net Growth</h3>
+                <p id="total-net-growth">0</p>
+            </div>
+        </section>
+
+        <section class="summary-details">
+            <div class="fresh-customers">
+                <h3 class="collapsible-header" onclick="toggleCollapse(this)">Fresh Customers <span class="collapse-icon">▼</span></h3>
+                <div class="collapsible-content">
+                    <ul id="fresh-customer-list">
+                        <li>No fresh customers found.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="repeat-customers">
+                <h3 class="collapsible-header" onclick="toggleCollapse(this)">Repeat Business <span class="collapse-icon">▼</span></h3>
+                <div class="collapsible-content">
+                    <p>Churn Rate: <span id="churn-rate">0%</span></p>
+                    <ul id="repeat-business-list">
+                        <li>No repeat business data.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="report-section" id="monthly-summary-section">
+            <h2 class="collapsible-header" onclick="toggleCollapse(this)">Monthly Performance Summary <span class="collapse-icon">▼</span></h2>
+            <div class="collapsible-content">
+                <table id="monthly-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Inflow</th>
+                            <th>Outflow</th>
+                            <th>Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="report-section" id="company-breakdown-section">
+            <h2 class="collapsible-header" onclick="toggleCollapse(this)">Company-wise Breakdown <span class="collapse-icon">▼</span></h2>
+            <div class="collapsible-content">
+                <table id="company-breakdown-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Inflow</th>
+                            <th>Outflow</th>
+                            <th>Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="report-section" id="product-breakdown-section">
+            <h2 class="collapsible-header" onclick="toggleCollapse(this)">Product-wise Breakdown <span class="collapse-icon">▼</span></h2>
+            <div class="collapsible-content">
+                <table id="product-breakdown-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Inflow</th>
+                            <th>Outflow</th>
+                            <th>Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="report-section" id="cumulative-trends-section">
+            <h2>Cumulative Performance Trends</h2>
+            <canvas id="cumulative-performance-chart"></canvas>
+        </div>
+
+        <div class="report-section" id="historical-trends-section">
+            <h2>Historical Performance Trends</h2>
+            <canvas id="performance-chart"></canvas>
+        </div>
+    </main>
+
+    <div id="detailed-entries-container" class="report-section hidden">
+        <button id="back-to-report-btn">← Back to Report</button>
+        <h2>Detailed Entries for <span id="detailed-title"></span></h2>
+        <div class="controls">
+            <label>
+                <input type="checkbox" id="show-customer-name"> Show Customer Names
+            </label>
+        </div>
+        <table id="detailed-table" class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>INF Total</th>
+                    <th>OUT Total</th>
+                    <th>Net</th>
+                    <th class="customer-name-column hidden">Customer Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="staff_report.js"></script>
+</body>
+</html>

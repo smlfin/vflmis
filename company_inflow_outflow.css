@@ -1,0 +1,322 @@
+/* company_inflow_outflow.css - Professional, Clean, Corporate-Casual Style */
+
+/* --- Core Styles & Typography --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9; /* Light background for a clean look */
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s;
+}
+
+h1, h2, h3 {
+    color: #1a4a75; /* Deep blue heading color */
+    font-weight: 600;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* --- Report Header (The SML Group "look") --- */
+.report-header {
+    background-color: #ffffff; /* White header for contrast */
+    border-bottom: 4px solid #00a0e9; /* Sky blue border for a "neo-lit" effect */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.report-header h1 {
+    margin: 0;
+    color: #007bb5; /* A vibrant blue for the main title */
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #007bb5;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.header-nav a:hover {
+    background-color: #e6f7ff; /* Very light blue hover */
+    color: #1a4a75;
+}
+
+/* --- Main Report Container --- */
+.report-container {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ------------------------------------------- */
+/* --- NEW: Summary Cards Styling --- */
+/* ------------------------------------------- */
+.summary-section {
+    margin-bottom: 30px;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: center;
+    border-top: 4px solid #1a4a75; /* Subtle corporate accent */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Specific coloring for cards to highlight Net Growth */
+#overall-total-inflow,
+#overall-total-outflow {
+    color: #1a4a75; /* Deep blue */
+}
+
+#overall-total-net-growth {
+    color: #00a0e9; /* Vibrant sky blue */
+    text-shadow: 0 0 5px rgba(0, 160, 233, 0.5); /* Subtle 'glowing' effect */
+}
+
+/* ------------------------------------------- */
+/* --- Filter Controls & Button Styling --- */
+/* ------------------------------------------- */
+.report-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    align-items: flex-end; /* Align filter groups and button */
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    flex: 1;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.report-controls input[type="text"],
+.report-controls input[type="date"],
+.report-controls select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+/* Styling for fixed company name to match input height */
+.filter-group p {
+    padding: 10px; 
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #eef; /* Slightly different background for readonly text */
+    font-weight: bold;
+    color: #007bb5;
+    height: 40px; /* Match standard input height */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.report-controls input:focus,
+.report-controls select:focus {
+    border-color: #00a0e9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 160, 233, 0.3);
+}
+
+#view-detailed-entries-btn {
+    padding: 10px 20px;
+    background-color: #007bb5;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    height: 40px; /* Match height of inputs/selects */
+}
+
+#view-detailed-entries-btn:hover {
+    background-color: #00a0e9;
+    box-shadow: 0 0 8px rgba(0, 160, 233, 0.5); /* Glowing effect on hover */
+}
+
+
+/* --- Report Sections --- */
+.report-section {
+    margin-top: 30px;
+}
+
+/* --- Table Styles (Responsive and Clean) --- */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.95em;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+table thead th {
+    background-color: #1a4a75; /* Dark header color */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: sticky;
+    top: 0;
+}
+
+table tbody tr:hover {
+    background-color: #f0f8ff; /* Light hover effect */
+    cursor: default;
+}
+
+/* --- Specific Cell/Row Styles --- */
+.totals-row {
+    font-weight: 700;
+    background-color: #e6f7ff; /* Highlight totals row */
+    border-top: 2px solid #007bb5;
+}
+
+/* Performance coloring */
+.positive {
+    color: #28a745; /* Green for positive growth */
+    font-weight: 500;
+}
+
+.negative {
+    color: #dc3545; /* Red for negative growth */
+    font-weight: 500;
+}
+
+/* --- Messages and Indicators --- */
+.info-message {
+    padding: 15px;
+    background-color: #d1ecf1; /* Light blue info box */
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    border-radius: 4px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 900px) {
+    .report-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-nav {
+        margin-top: 15px;
+    }
+
+    .report-container {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+    }
+
+    table thead th {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 600px) {
+    .report-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    #view-detailed-entries-btn {
+        width: 100%; /* Full width button on small screens */
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD Dashboard - Vanchinad Finance</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Base Body Style for Centering */
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333333; 
+            line-height: 1.5; 
+            padding: 0;
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #f7f9fb;
+        }
+
+        /* Styling the card similar to index.htm for consistency */
+        .mis-container {
+            background-color: #ffffff; 
+            width: 100%; 
+            max-width: 420px; 
+            padding: 35px 50px; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+            text-align: center; 
+            border-top: 6px solid #008080; /* Teal Primary */
+        }
+        .mis-container h1 { 
+            color: #008080; 
+            margin: 0 0 15px 0; 
+            font-size: 24px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+        .options-wrapper { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+        }
+        .mis-btn { 
+            background-color: #008080; 
+            color: #ffffff; 
+            padding: 18px; 
+            font-size: 18px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: all 0.3s ease; 
+            display: block;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1); 
+            border: none;
+        }
+        .mis-btn:hover { 
+            background-color: #808000; /* Olive Accent */
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .back-link {
+            display: block;
+            margin-top: 25px;
+            color: #008080;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mis-container">
+        <h1>Recurring Deposit Dashboard</h1>
+        <div class="options-wrapper">
+            <a href="rd-branch-mis.htm" class="mis-btn">RD Branch MIS</a>
+            <a href="#" class="mis-btn disabled" style="background-color: #ccc; cursor: default;">Collection Report (WIP)</a>
+        </div>
+        <a href="index.htm" class="back-link">← Back to Main Menu</a>
+    </div>
+</body>
+</html>

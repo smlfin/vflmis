@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company-wise Inflow/Outflow Report</title>
+    <link rel="stylesheet" href="company_inflow_outflow.css">
+    <link rel="stylesheet" href="company_inflow_outflow.css">
+</head>
+<body>
+    <div class="report-header">
+        <h1>Company-wise Inflow/Outflow Report</h1>
+        <div class="header-nav">
+            <a href="dashboard.htm">← Back to Dashboard</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+    <div class="report-container">
+        <div class="report-controls">
+            <div class="filter-group">
+                <label for="month-select">Select Month:</label>
+                <select id="month-select"></select>
+            </div>
+            <div class="filter-group">
+                <label>Company:</label>
+                <p id="fixed-company-name" style="font-weight: bold; color: #1e3a8a;">VANCHINAD FINANCE LTD</p>
+            </div>
+            
+        </div>
+
+        <div class="summary-section">
+            <h2>Overall Summary (April 2025 - Current Month)</h2>
+            <div class="table-responsive">
+                <table id="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Total Inflow</th>
+                            <th>Total Outflow</th>
+                            <th>Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="summary-company"></td>
+                            <td id="summary-inflow"></td>
+                            <td id="summary-outflow"></td>
+                            <td id="summary-net"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="no-summary-data-message" class="info-message" style="display: none;">No overall summary data available for the fixed company/month.</p>
+        </div>
+
+        <div class="report-section" id="monthly-breakup-section">
+            <h2>Monthly Breakup (VANCHINAD FINANCE LTD)</h2>
+            <div class="table-responsive">
+                <table id="monthly-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Inflow</th>
+                            <th>Outflow</th>
+                            <th>Net Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <p id="no-monthly-data-message" class="info-message" style="display: none;">No monthly data available for the fixed company/month.</p>
+        </div>
+
+        
+
+    </div>
+
+    <script src="company_inflow_outflow.js"></script>
+</body>
+</html>
