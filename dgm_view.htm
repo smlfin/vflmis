@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGM View - Vanchinad Finance</title>
+    <link rel="stylesheet" href="dgm_view.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-title">
+            <h2>DGM View</h2>
+            <span class="subtitle">Hierarchy Performance Analysis</span>
+        </div>
+        <a href="dashboard.htm" class="back-btn">Back to Dashboard</a>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="controls-card">
+            <div class="control-group">
+                <label for="monthFilter">Select Month</label>
+                <select id="monthFilter">
+                    <option value="all">All Months</option>
+                    </select>
+            </div>
+
+            <div class="control-group">
+                <label for="tmFilter" style="display:none;">Select Territory Manager (TM)</label>
+                <select id="tmFilter" disabled style="display:none;"> 
+                    <option value="all">All TMs</option>
+                    </select>
+            </div>
+
+            <button id="loadBtn" onclick="applyFilters()">Analyze Data</button>
+        </div>
+
+        <div class="summary-row" id="summaryRow" style="display:none;">
+            <div class="kpi-card">
+                <div class="kpi-label">Total Inflow</div>
+                <div class="kpi-value val-green" id="totalInf">0</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Total Outflow</div>
+                <div class="kpi-value val-red" id="totalOut">0</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Net Growth</div>
+                <div class="kpi-value" id="totalNet">0</div>
+            </div>
+        </div>
+
+        <div id="tmCardContainer" class="tm-card-container">
+            </div>
+
+        <div id="treeContainer" class="tree-container">
+            <div class="loading-msg">Loading Data...</div>
+        </div>
+
+        <div id="branchModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h3 id="modalTitle">Breakdown</h3>
+                <div id="modalBody" class="modal-body">
+                    </div>
+            </div>
+        </div>
+        </div>
+
+    <script src="dgm_view.js"></script>
+</body>
+</html>
